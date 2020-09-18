@@ -70,7 +70,7 @@ class stack{
         
         }
         
-    void peek() //Displaying the topmost element
+    void peek() //Displaying the topmost element without removing it
             {
        
        if(top==-1){
