@@ -30,6 +30,8 @@ class bin{
     cout<<result;
     }
 
+    // Recursive function for binary search 
+
 int bin_search (int a[],int l,int r,int x) {
 
        int mid;
