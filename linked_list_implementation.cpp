@@ -189,6 +189,7 @@ class linked_list{
         
         else {
         
+        int i,pos;
         cout << "Enter position to delete : ";
         cin >> pos ;
         
