@@ -4,30 +4,37 @@ Here I will post my regular DSA problems
 #include<iostream>
 using namespace std;
 
+// Declaration of a linked list structure
+
 struct node {
 
     int data;
     struct node * next ;
     
-};
+            };
 
 class linked_list{
 
-     struct node *head;
+    struct node *head; // Declaration of head node
     
     public:
-       
+     
+    // Assigning head pointer with null initially
+  
     linked_list(){
     
       head = NULL;
     
                  }
+    
+    // Insert node at the beginning 
 
     void insertbeg(){
 
       struct node *temp;
       
       temp = new node;
+      cout << "Enter the element to insert begin : ";
       cin >> temp -> data;
   
       if( head == NULL ){
@@ -45,26 +52,14 @@ class linked_list{
 
 }
 
-   void traverse(){
-
-       struct node * temp ;
-       temp = head ;
-       while ( temp != NULL ){
-         
-        cout << temp -> data << " ";
-        temp = temp -> next ;
-        
-                            }
-        
-        cout << endl;
-
-}
-
+    // Insert node at end 
+  
    void insertend(){
 
       struct node * temp1,*temp2;
     
       temp2 = new node ;
+      cout << "Enter element to insert at end : ";
       cin >> temp2 -> data;
       temp2 -> next = NULL ;
     
@@ -79,7 +74,9 @@ class linked_list{
       temp1 -> next = temp2;
       
 }
-
+      
+     // Insert a node at specific position
+ 
      void insertmid () {
     
         struct node *temp ,*prev ,*curr;
@@ -87,7 +84,7 @@ class linked_list{
         
         cout << "Enter position to insert :";
         cin >> pos;
-        
+        cout << endl;
         if( pos == 1 ){
         
            insertbeg();
@@ -100,6 +97,7 @@ class linked_list{
         if( i == pos ){
         
            temp = new node ;
+           cout << "Enter the element :";
            cin >> temp -> data ;
            temp -> next = curr ;
            prev -> next = temp ;
@@ -115,6 +113,8 @@ class linked_list{
   
     
     }
+     
+     // Deleting the first node 
 
      void deletebeg(){
     
@@ -137,6 +137,8 @@ class linked_list{
     
     }
     
+    // Deleting the last node
+
     void deleteend() {
     
        if( head == NULL ){
@@ -176,7 +178,9 @@ class linked_list{
     
     
     }
-    
+
+        // Deleting a node at specific position
+
         void deletemid(){
         
         struct node * temp , *curr , *prev;
@@ -223,6 +227,24 @@ class linked_list{
         }
         
                          }
+      
+       // Function to print the elements of the linked list
+
+      void traverse(){
+
+       struct node * temp ;
+       temp = head ;
+       cout << "Elements in the linked list :\n\n";
+       while ( temp != NULL ){
+         
+        cout << temp -> data << " ";
+        temp = temp -> next ;
+        
+                              }
+        
+        cout << endl;
+
+                      }
 
 };
 
@@ -231,44 +253,55 @@ int main (){
 
       linked_list l;
       int ch,n;
+
         do
         {
         
         cout<<"Enter your choice: ";
         cin>>ch;
+
         switch(ch)
         {
+
         case 1:
-        l.insertbeg();
-        break;
+              l.insertbeg();
+              break;
+
         case 2:
-        l.insertend();
-        break;
+              l.insertend();
+              break;
+
         case 3:
-        l.insertmid();
-        break;
+              l.insertmid();
+              break;
+
         case 4:
-        l.deletebeg();
-        break;
+              l.deletebeg();
+              break;
+
         case 5:
-        l.deleteend();
-        break;
+              l.deleteend();
+              break;
+
         case 6:
-        l.deletemid();
-        break;
+              l.deletemid();
+              break;
+
         case 7:
-        l.traverse();
-        break;
+              l.traverse();
+              break;
+
         default:
-        cout<<"invalid choice"<<endl;
-        break;
+              cout << "Invalid choice " << endl;
+              break;
+
         }
-       cout<<"Continue? :";
+
+        cout<<"Continue? :";
         cin>>n;
-        }while(n==1);
 
-      return 0;
+        } while( n == 1 );
 
-
+        return 0;
 
 }
