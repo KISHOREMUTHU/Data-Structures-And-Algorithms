@@ -7,8 +7,11 @@ Here I will post my regular DSA problems
 #include<string.h>
 #include<conio.h>
 #include<ctype.h>
+
 char s[20];
 int top=-1;
+
+// Function to assign value based on priority
 
 int priority(char c)
 {
