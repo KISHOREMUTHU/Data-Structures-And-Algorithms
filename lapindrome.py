@@ -1,5 +1,5 @@
 # Data-Structures-And-Algorithms
-Here I will post my regular DSA problems
+# Here I will post my regular DSA problems
 
 s=input()
 s1,s2='',''
